@@ -19,9 +19,22 @@ CSV files require columns: `key`, `protein`, `ligand`, `pk`
 - `ligand`: SDF filename
 - `pk`: binding affinity value
 
+For example:
+```csv
+key,pk,protein,ligand
+1a4m_A_354,13.0,1a4m_PRH_A_354/1a4m_PRH_A_354_protein_refined.pdb,1a4m_PRH_A_354/1a4m_PRH_A_354_ligand_refined.sdf
+...
+```
+
 --data_dir takes in the root data directory, relative to which protein and ligand file paths in the .csv are defined.
 
-An AEV-PLIG .csv file can easily be converted to the above using the `reformatter.py` or `reformat_train_valid_split.py` scripts from the [utilities repo](https://github.com/savvag44/binding-model-utilities).
+Thus if `--data_dir /home/data` was given, the absolute file paths for the above example would be:
+```
+/home/data/1a4m_PRH_A_354/1a4m_PRH_A_354_protein_refined.pdb
+/home/data/1a4m_PRH_A_354/1a4m_PRH_A_354_ligand_refined.sdf
+```
+
+An [AEV-PLIG](https://github.com/weitse-hsu/AEV-PLIG-refined) formatted .csv file can easily be converted to the above using the `reformatter.py` or `reformat_train_valid_split.py` scripts from the [utilities repo](https://github.com/savvag44/binding-model-utilities).
 
 ### Single Model
 ```bash
