@@ -1,5 +1,5 @@
-# RFscore-refined
-An implementation of [RFscore](https://github.com/oddt/rfscorevs), allowing facile training and testing of both individual models and model ensembles on large datasets.
+# RF-Score-refined
+An implementation of [RF-Score](https://github.com/oddt/rfscorevs), allowing facile training and testing of both individual models and model ensembles on large datasets.
 
 ## Setup
 
