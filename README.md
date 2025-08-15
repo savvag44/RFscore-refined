@@ -11,7 +11,7 @@ conda activate rfscore
 ## Usage
 
 
-## Input Format
+### Input Format
 
 The ToolboxSF .csv file format is used by default:
 CSV files require columns: `key`, `protein`, `ligand`, `pk`
@@ -26,7 +26,7 @@ key,pk,protein,ligand
 ...
 ```
 
---data_dir takes in the root data directory, relative to which protein and ligand file paths in the .csv are defined.
+`--data_dir` takes in the root data directory, relative to which protein and ligand file paths in the .csv are defined.
 
 Thus if `--data_dir /home/data` was given, the absolute file paths for the above example would be:
 ```
