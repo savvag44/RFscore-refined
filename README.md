@@ -10,6 +10,19 @@ conda activate rfscore
 
 ## Usage
 
+
+## Input Format
+
+The ToolboxSF .csv file format is used by default:
+CSV files require columns: `key`, `protein`, `ligand`, `pk`
+- `protein`: PDB filename 
+- `ligand`: SDF filename
+- `pk`: binding affinity value
+
+--data_dir takes in the root data directory, relative to which protein and ligand file paths in the .csv are defined.
+
+An AEV-PLIG .csv file can easily be converted to the above using the `reformatter.py` or `reformat_train_valid_split.py` scripts from the [utilities repo](https://github.com/savvag44/binding-model-utilities).
+
 ### Single Model
 ```bash
 # Train
@@ -34,19 +47,9 @@ python script.py --predict --ensemble 5 --val_csv_file test.csv --val_data_dir d
 python script.py --train --predict --ensemble 5 --csv_file train.csv --val_csv_file test.csv --data_dir data/structures --val_data_dir data/structures --model_name rf_ensemble
 ```
 
-### Metric Calculation
+### Result Metric Calculation
 Metric calculation on prediction results can be easily performed using the `metrics.py` or `metric-ensembles.py` scripts from the [utilities repo](https://github.com/savvag44/binding-model-utilities).
-Note that the directory structure is appropriate for use with `metric-ensembles.py` by default, just pass the base model directory containing model{1..5} as the argument :)
-
-## Input Format
-
-The ToolboxSF .csv file format is used by default:
-CSV files require columns: `key`, `protein`, `ligand`, `pk`
-- `protein`: PDB filename 
-- `ligand`: SDF filename
-- `pk`: binding affinity value
-
-An AEV-PLIG .csv file can easily be converted to the above using the `reformatter.py` or `reformat_train_valid_split.py` scripts from the [utilities repo](https://github.com/savvag44/binding-model-utilities).
+Note that the directory structure is appropriate for use with `metric-ensembles.py` by default, just pass the base directory (containing model{1..5} subdirectories) as the argument :)
 
 ## Output
 
